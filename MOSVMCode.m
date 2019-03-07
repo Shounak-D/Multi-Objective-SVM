@@ -199,11 +199,11 @@ for j=1:length(sigma_gm)
 %             l2(:,(train_y==-1)) = repmat(l0(:,3),1,sum(train_y==-1));
             l3 = zeros(3,1);
             l4 = [l1, l3, l2];
-            A = [k4; l4];
+            A = [k4; l4; f];
 
             m1 = -1*ones(length(train_y),1);
             m2 = zeros(3,1);
-            b = [m1; m2];
+            b = [m1; m2; 0];
 
             % running the linear program
             opts = optimset('MaxIter',500);
